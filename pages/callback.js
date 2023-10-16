@@ -160,9 +160,10 @@ export async function getServerSideProps(context) {
           isLogoutResponse = true
         } else {
           nameId =
-            dom.getElementsByTagName('saml:NameID')[0]?.childNodes[0]?.nodeValue
+            dom.getElementsByTagName('saml2:NameID')[0]?.childNodes[0]
+              ?.nodeValue
           sessionIndex = dom
-            .getElementsByTagName('saml:AuthnStatement')[0]
+            .getElementsByTagName('saml2:AuthnStatement')[0]
             ?.getAttribute('SessionIndex')
           console.log(`Name ID: ${nameId}, Session Index: ${sessionIndex}`)
         }
